@@ -1,0 +1,89 @@
+/* service section */
+.service-section-wrapper {
+  text-align: center;
+  .service-image-icon {
+    &.icon_ {
+      padding-top: 12px;
+    }
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      width: fit-content;
+      padding: 18px 0 10px 0;
+    }
+    .service-image-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 30%;
+    }
+  }
+  .service-title-description {
+    & > div {
+      h1,
+      p {
+        margin: 0;
+        line-height: 1;
+        letter-spacing: 1px;
+        margin-top: 12px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+        padding-bottom: 18px;
+      }
+    }
+  }
+}
+
+.wp-block-zita-blocks-block-column-parent:not(.column-count-1) {
+  display: flex;
+  flex-wrap: wrap;
+}
+@for $i from 2 through 4 {
+  .wp-block-zita-blocks-block-column-parent.column-count-#{$i}
+    .wp-block-zita-blocks-icon-image-content {
+    width: calc(100% /#{$i} - 10px *#{$i});
+    margin: 10px;
+  }
+  .wp-block-zita-blocks-block-column-parent.full-width.column-count-#{$i}
+    .wp-block-zita-blocks-icon-image-content {
+    width: calc(100% / #{$i});
+    margin: 0;
+  }
+}
+/* full */
+@media only screen and (max-width: 768px) {
+  @for $i from 2 through 4 {
+    .wp-block-zita-blocks-block-column-parent.column-count-#{$i}
+      .wp-block-zita-blocks-icon-image-content {
+      width: calc(100% / 2 - 10px * 2);
+      margin: 10px;
+    }
+    .wp-block-zita-blocks-block-column-parent.full-width.column-count-#{$i}
+      .wp-block-zita-blocks-icon-image-content {
+      width: calc(100% / 2);
+      margin: 0;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  @for $i from 2 through 4 {
+    .wp-block-zita-blocks-block-column-parent.column-count-#{$i}
+      .wp-block-zita-blocks-icon-image-content {
+      width: 100%;
+      margin: 10px;
+    }
+    .wp-block-zita-blocks-block-column-parent.full-width.column-count-#{$i}
+      .wp-block-zita-blocks-icon-image-content {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
